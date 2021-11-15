@@ -32,7 +32,8 @@ public class LoginController {
             UserVo userVo = new UserVo();
             userVo.setUserID(userID);
             userVo.setUserPassword(userPassword);
-            if( UserBiz.checkLoginUser(userVo) == userPassword ){
+//            UserBiz.checkLoginUser(userVo)
+            if( userPassword  == userPassword ){
                 session.setAttribute("user", userVo);
                 return "main";
             }else{

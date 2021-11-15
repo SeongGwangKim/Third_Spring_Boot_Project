@@ -28,16 +28,16 @@
    <span class="icon-bar"></span>
    <span class="icon-bar"></span>
   </button>  
- <a class="navbar-brand" href="main.jsp"><img alt="" src="image/logo.png" style= "margin-top: -30px; height: 80px"></a>
+ <a class="navbar-brand" href="main"><img alt="" src="image/logo.png" style= "margin-top: -30px; height: 80px"></a>
  </div>
  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   <ul class="nav navbar-nav">
-   <li><a href="main.jsp">메인</a></li>
-   <li><a href="infoENS.jsp">영양제 소개</a>
-   <li class="active"><a href="bbs2.jsp">Q&A 게시판</a></li>
-   <li><a href="bbs.jsp">후기 게시판</a></li>
-   <li><a href="newsVideo.jsp">NEWS & VIDEO</a></li>
-   <li><a href="myPage.jsp">마이페이지</a></li>
+   <li><a href="main">메인</a></li>
+   <li><a href="infoENS">영양제 소개</a>
+   <li class="active"><a href="bbs2">Q&A 게시판</a></li>
+   <li><a href="bbs">후기 게시판</a></li>
+   <li><a href="newsVideo">NEWS & VIDEO</a></li>
+   <li><a href="myPage">마이페이지</a></li>
   </ul>
   <%
   	if(userID == null){
