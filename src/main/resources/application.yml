@@ -1,7 +1,7 @@
 spring:
   mvc:
     view:
-      static-path-pattern: /resources/**
+#      static-path-pattern: /resources/
       prefix: /WEB-INF/views/
       suffix: .jsp
 

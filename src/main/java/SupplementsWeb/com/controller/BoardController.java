@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 
 
 @Controller
-@RequestMapping("/bbs")
+//@RequestMapping("/bbs")
 public class BoardController {
 
     @RequestMapping(value = "/bbs", method = RequestMethod.GET)

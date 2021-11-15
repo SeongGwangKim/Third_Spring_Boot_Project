@@ -4,19 +4,21 @@ package SupplementsWeb.com.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/info")
+//@RequestMapping("/info")
 public class InfoController {
 
-    @GetMapping("/infoENS")
+    @RequestMapping(value = "/infoENS", method = RequestMethod.GET)
     public String infoENS() {
+        System.out.println("infoENS");
         return "infoENS";
     }
 
-    @GetMapping("/infoECS")
-    public String infoECS() {
-        return "infoECS";
+    @GetMapping("/infoCNS")
+    public String infoCNS() {
+        return "infoCNS";
     }
 
     @GetMapping("/infoNGNS")
