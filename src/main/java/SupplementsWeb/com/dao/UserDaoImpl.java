@@ -9,12 +9,15 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
+import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
 @Repository
 public class UserDaoImpl extends JdbcDaoSupport implements UserDao{
+
+
 
     public class UserRowMapper implements RowMapper<UserVo>{
 
@@ -31,12 +34,14 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao{
         }
 
     }
-
+//
+//    @Autowired
+//    JdbcTemplate jdbcTemplate;
 
     private final JdbcTemplate jdbcTemplate;
 
-    public UserDaoImpl(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+    public UserDaoImpl(DataSource dataSource) {
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
 
@@ -58,7 +63,7 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao{
     }
 
 
-    public UserVo checkLoginUser(String userID) {
+    public String checkLoginUser(String userID) {
         System.out.println("임플에서 id는 잘 넘어오니? " + userID);
 //        RowMapper<UserVo> rowMapper = (rs, rowNum) -> {
 //            UserVo entity = new UserVo();
@@ -86,10 +91,10 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao{
         };
         System.out.println(jdbcTemplate);
 
-        return jdbcTemplate.queryForObject(checkLoginUser, mapper, new Object[] {userID});
+//        return jdbcTemplate.queryForObject(checkLoginUser, mapper, new Object[] {userID});
 
-//        return jdbcTemplate.queryForObject("SELECT userPassword FROM supplementsUser WHERE userID = ?",
-//                new Object[] {userID},  new int[] { java.sql.Types.VARCHAR}, String.class);
+        return jdbcTemplate.queryForObject(checkLoginUser,
+                new Object[] {userID},  new int[] { java.sql.Types.VARCHAR}, String.class);
 
 
     }

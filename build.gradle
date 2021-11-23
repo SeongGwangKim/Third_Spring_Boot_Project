@@ -41,16 +41,6 @@ dependencies {
 	testImplementation 'org.projectlombok:lombok'
 
 
-	//Oracle DataBase
-	// https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6
-//	implementation group: 'com.oracle.database.jdbc', name: 'ojdbc6', version: '11.2.0.4'
-//	runtimeOnly'com.oracle.database.jdbc:ojdbc6'
-
-
-	//	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-//	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
-//	implementation 'org.springframework.boot:spring-boot-starter-security'
-
 }
 
 repositories {

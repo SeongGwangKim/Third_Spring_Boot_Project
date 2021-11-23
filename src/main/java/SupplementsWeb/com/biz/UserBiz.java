@@ -19,10 +19,11 @@ public class UserBiz {
         return res;
     }
     
-    public UserVo checkLoginUser(String userID) {
+    public String checkLoginUser(String userID) {
+//        UserDaoImpl userDaoImpl = new UserDaoImpl();
 
         System.out.println("userID? " + userID);
-        UserVo res= userDaoImpl.checkLoginUser(userID);
+        String res= userDaoImpl.checkLoginUser(userID);
         System.out.println("Biz니? " + res);
         return res;
     }

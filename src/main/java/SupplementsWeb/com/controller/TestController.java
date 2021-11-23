@@ -22,11 +22,11 @@ public class TestController {
         UserVo userVo = new UserVo();
 
         UserBiz userBiz = new UserBiz();
-        userVo = userBiz.checkLoginUser(userID);
-//        savePassword =  userBiz.checkLoginUser(userID);
+//        userVo = userBiz.checkLoginUser(userID);
+        savePassword =  userBiz.checkLoginUser(userID);
 
-        model.addAttribute("userVo", userVo);
-//        model.addAttribute("savePassword", savePassword);
+//        model.addAttribute("userVo", userVo);
+        model.addAttribute("savePassword", savePassword);
 
         return "test";
     }
