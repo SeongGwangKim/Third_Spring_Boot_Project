@@ -20,7 +20,6 @@ public class UserBiz {
     }
     
     public UserVo checkLoginUser(String userID) {
-        UserDaoImpl userDaoImpl = new UserDaoImpl();
 
         System.out.println("userID? " + userID);
         UserVo res= userDaoImpl.checkLoginUser(userID);

@@ -57,7 +57,7 @@
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('로그인을 하세요.')");
-		script.println("location.href = 'login.jsp'");
+		script.println("location.href = 'login'");
 		script.println("</script>");
 	}
 	if (bbs2.getBbsTitle() == null || bbs2.getBbsContent() == null ) {
@@ -93,7 +93,7 @@
 		
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
-		script.println("location.href = 'bbs2.jsp'");
+		script.println("location.href = 'bbs2'");
 		script.println("</script>");
 
 	}

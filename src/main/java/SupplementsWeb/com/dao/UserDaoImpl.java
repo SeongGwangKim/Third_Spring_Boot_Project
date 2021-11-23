@@ -33,9 +33,12 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao{
     }
 
 
+    private final JdbcTemplate jdbcTemplate;
 
-    @Autowired
-    JdbcTemplate jdbcTemplate;
+    public UserDaoImpl(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
 
     public UserVo getUser(String userID) {
         RowMapper<UserVo> rowMapper = (rs, rowNum) -> {
@@ -67,6 +70,7 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao{
 //            entity.setUserBirth(rs.getString(6));
 //            return entity;
 //        };
+
         RowMapper<UserVo> mapper = new UserRowMapper() {
             @Override
             public UserVo mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -80,10 +84,13 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao{
                 return entity;
             }
         };
+        System.out.println(jdbcTemplate);
+
         return jdbcTemplate.queryForObject(checkLoginUser, mapper, new Object[] {userID});
 
-//        return jdbcTemplate.queryForObject(checkLoginUser,
+//        return jdbcTemplate.queryForObject("SELECT userPassword FROM supplementsUser WHERE userID = ?",
 //                new Object[] {userID},  new int[] { java.sql.Types.VARCHAR}, String.class);
+
 
     }
     public int joinUser(UserVo vo) {

@@ -27,14 +27,14 @@
 				<span class="icon-bar"></span> 
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="main.jsp"><img alt="logo" src="image/logo.png" style= "margin-top: -30px; height: 80px"></a>
+			<a class="navbar-brand" href="main"><img alt="logo" src="image/logo.png" style= "margin-top: -30px; height: 80px"></a>
 		</div>
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="main.jsp">메인</a></li>
+				<li class="active"><a href="main">메인</a></li>
 
-				<li><a href="infoENS.jsp">영양제 소개</a>
+				<li><a href="infoENS">영양제 소개</a>
 					<ul class="sub-menu1">
 						<li><a href="infoCNS">증상별 영양제 추천</a></li>
 						<li><a href="#">종합 영양제</a></li>
@@ -42,27 +42,27 @@
 					</ul>
 					</li>
 				
-				<li><a href="bbs2.jsp">가격 비교</a>
+				<li><a href="bbs2">가격 비교</a>
 					<ul class="sub-menu2">
 						<li><a href="#">국내 영양제</a></li>
 						<li><a href="#">해외 영양제</a></li>
 					</ul>
 					</li>
 					
-				<li><a href="bbs.jsp">소통 게시판</a>
+				<li><a href="bbs">소통 게시판</a>
 					<ul class="sub-menu3">
 						<li><a href="#">Q&A 게시판</a></li>
 						<li><a href="#">후기 게시판</a></li>
 					</ul>
 					</li>
 					
-				<li><a href="newsVideo.jsp">NEWS & VIDEO</a>
+				<li><a href="newsVideo">NEWS & VIDEO</a>
 				<ul class="sub-menu4">
 					<li><a href="#">새 소식</a></li>
 					</ul>
 					</li>
 				
-				<li><a href="myPage.jsp">마이페이지</a>
+				<li><a href="myPage">마이페이지</a>
 				<ul class="sub-menu5">
 					<li><a href="#">회원 정보 수정</a></li>
 					<li><a href="#">장바구니</a></li>
@@ -79,9 +79,9 @@
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">접속하기<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li class="active"><a href="login.jsp">로그인</a></li>
+						<li class="active"><a href="login">로그인</a></li>
 						<!-- active : 선택이 됨을 알려줌 -->
-						<li><a href="join.jsp">회원가입</a></li>
+						<li><a href="join">회원가입</a></li>
 					</ul></li>
 			</ul>
 			<%
@@ -93,7 +93,7 @@
 					data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expanded="false">회원관리<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="logoutAction.jsp">로그아웃</a></li>
+						<li><a href="logoutAction">로그아웃</a></li>
 
 					</ul></li>
 			</ul>

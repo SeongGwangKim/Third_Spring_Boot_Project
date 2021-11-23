@@ -18,13 +18,15 @@ public class TestController {
     @GetMapping("/input")
     public String test(@RequestParam String userID, @RequestParam String userPassword,
                        Model model){
+        String savePassword = null;
         UserVo userVo = new UserVo();
 
         UserBiz userBiz = new UserBiz();
         userVo = userBiz.checkLoginUser(userID);
-
+//        savePassword =  userBiz.checkLoginUser(userID);
 
         model.addAttribute("userVo", userVo);
+//        model.addAttribute("savePassword", savePassword);
 
         return "test";
     }
