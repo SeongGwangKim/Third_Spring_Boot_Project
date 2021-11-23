@@ -4,13 +4,14 @@ import SupplementsWeb.com.vo.BbsCommentVo2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
 
 import java.util.List;
 
 @Repository
-public class BbsCommentDaoImpl2 implements BbsCommentDao2{
+public class BbsCommentDaoImpl2 extends JdbcDaoSupport implements BbsCommentDao2{
 
 
 	@Autowired

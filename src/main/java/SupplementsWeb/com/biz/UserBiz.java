@@ -2,8 +2,10 @@ package SupplementsWeb.com.biz;
 
 import SupplementsWeb.com.dao.UserDaoImpl;
 import SupplementsWeb.com.vo.UserVo;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 @Service
 public class UserBiz {
@@ -17,8 +19,12 @@ public class UserBiz {
         return res;
     }
     
-    public UserVo checkLoginUser(UserVo userVo) {
-        UserVo res= userDaoImpl.checkLoginUser(userVo);
+    public UserVo checkLoginUser(String userID) {
+        UserDaoImpl userDaoImpl = new UserDaoImpl();
+
+        System.out.println("userID? " + userID);
+        UserVo res= userDaoImpl.checkLoginUser(userID);
+        System.out.println("Biz니? " + res);
         return res;
     }
     

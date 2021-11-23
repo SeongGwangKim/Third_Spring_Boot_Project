@@ -1,6 +1,8 @@
 package SupplementsWeb.com.vo;
 
+
 public class UserVo {
+
 
 	private String userID;
 	private String userPassword;

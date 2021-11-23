@@ -11,12 +11,13 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
 
 
 @Repository
-public class BbsDaoImpl implements BbsDao {
+public class BbsDaoImpl extends JdbcDaoSupport implements BbsDao {
 
 	@Autowired
 	JdbcTemplate jdbcTemplate;

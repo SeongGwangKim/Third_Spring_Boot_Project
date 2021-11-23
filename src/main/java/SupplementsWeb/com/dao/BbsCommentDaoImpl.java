@@ -6,10 +6,11 @@ import SupplementsWeb.com.vo.BbsCommentVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class BbsCommentDaoImpl implements BbsCommentDao{
+public class BbsCommentDaoImpl extends JdbcDaoSupport implements BbsCommentDao{
 	
 	@Autowired
 	JdbcTemplate jdbcTemplate;

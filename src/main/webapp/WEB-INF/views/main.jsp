@@ -47,7 +47,7 @@
 				<li><a href="bbs2">Q&A 게시판</a>
 					</li>
 					
-					<li><a href="bbs">후기 게시판</a>
+					<li><a href="viewTest">후기 게시판</a>
 					</li>
 					
 				<li><a href="newsVideo">NEWS & VIDEO</a>
