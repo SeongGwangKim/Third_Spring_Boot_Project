@@ -1,7 +1,8 @@
 package SupplementsWeb.com.controller;
 
 
-import SupplementsWeb.com.vo.UserVo;
+import SupplementsWeb.com.biz.BoardBiz;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
@@ -10,30 +11,27 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 
 @Controller
-//@RequestMapping("/bbs")
+@RequestMapping("/bbs")
 public class BoardController {
 
-    @RequestMapping(value = "/bbs", method = RequestMethod.GET)
-    public String bbs(UserVo userVo, HttpServletRequest req,  RedirectAttributes rttr) throws Exception {
+    @Autowired
+    BoardBiz boardBiz;
 
-        HttpSession session = req.getSession();
-
-        if(userVo == null) {
-            session.setAttribute("member", null);
-            rttr.addFlashAttribute("msg", false);
-        } else {
-//            session.setAttribute("member", member);
-        }
-
-        return "bbs";
+    @GetMapping("/bbs")
+    public String bbs(@PageableDefault Pageable pageable, Model model){
+        model.addAttribute("boardList", boardBiz.findBoardList(pageable));
+        return "/bbs";
     }
+
+    @RequestMapping(value = "/bbs/write", method = RequestMethod.GET)
+    public String board(@RequestParam(value = "idx", defaultValue = "0") Long idx, Model model) {
+        model.addAttribute("board", boardBiz.findBoardByIdx(idx));
+        return "/board/form";
+    }
+
 
     @GetMapping("/bbs2")
     public String bbs2() {

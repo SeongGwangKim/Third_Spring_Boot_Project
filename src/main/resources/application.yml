@@ -1,11 +1,11 @@
 spring:
   mvc:
     view:
-#      static-path-pattern: /resources/
+# static-path-pattern: /resources/
       prefix: /WEB-INF/views/
       suffix: .jsp
 
-
+# Oracle
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
     url: jdbc:oracle:thin:@localhost:1521:XE
@@ -13,10 +13,50 @@ spring:
     password: TIGER
 
 
+
+# jpa
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+      generate-ddl: true
+      show-sql: true
+      database: oracle
+      database-platform: org.hibernate.dialect.Oracle10gDialect
+
+# thymeleaf
+    thymeleaf:
+      cache: false
+
+logging:
+  level:
+    org:
+      hibernate: info
+
+
+# jdbc
   jdbc:
     template:
       max-rows: 500
 
+# security
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 881218558153-ndr868i68rlofoo4l2gb488ksabi5q23.apps.googleusercontent.com
+            client-secret: kq6zIo0myJotHK5_0irhtYnW
+          facebook:
+            client-id: 465358593799840
+            client-secret: a37286e3dae00dcdce628f40dfe363f5
+
+custom:
+  oauth2:
+    kakao:
+      client-id: 1b8ff676ae01724ed77437f98d399543
+
+# server
 server:
   port: 8383
 

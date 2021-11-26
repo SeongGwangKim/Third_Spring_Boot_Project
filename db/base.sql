@@ -51,6 +51,7 @@ create table bbsComment
 SELECT * FROM BBS;
 
 select * from SUPPLEMENTSUSER;
+select * from SUPPLEMENTSUSER01;
 
 SELECT * FROM BBS WHERE bbsTitle LIKE '%ㅎㅎ%' ORDER BY bbsID desc
 
