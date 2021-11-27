@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 //@ComponentScan(basePackages = {"SupplementsWeb.com.controller"})
+
 @SpringBootApplication
 public class SupplementsWebApplication {
 

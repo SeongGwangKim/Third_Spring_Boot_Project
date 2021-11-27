@@ -5,12 +5,28 @@ spring:
       prefix: /WEB-INF/views/
       suffix: .jsp
 
-# Oracle
+## Oracle
+#  datasource:
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#    url: jdbc:oracle:thin:@localhost:1521:XE
+#    username: scott
+#    password: TIGER
+
+# h2
+  h2:
+    console:
+      enabled: true
+      path: /console
+
   datasource:
-    driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@localhost:1521:XE
-    username: scott
-    password: TIGER
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/test
+    username: oliver
+    password: 3083
+
+  devtools:
+    livereload:
+      enabled: true
 
 
 
@@ -41,20 +57,29 @@ logging:
 
 # security
   security:
+    user:
+      name: user
+      password: 1234
     oauth2:
       client:
+#        client-id: client
+#        client-secret: 1234
         registration:
           google:
             client-id: 881218558153-ndr868i68rlofoo4l2gb488ksabi5q23.apps.googleusercontent.com
             client-secret: kq6zIo0myJotHK5_0irhtYnW
+            redirectUri: http://localhost:8383/login/oauth2/code/google
+            scope: email, profile
           facebook:
             client-id: 465358593799840
             client-secret: a37286e3dae00dcdce628f40dfe363f5
+            redirectUri: http://localhost:8383/login/oauth2/code/facebook
+            scope: email
 
-custom:
-  oauth2:
-    kakao:
-      client-id: 1b8ff676ae01724ed77437f98d399543
+
+
+  profiles:
+    include: oauth
 
 # server
 server:

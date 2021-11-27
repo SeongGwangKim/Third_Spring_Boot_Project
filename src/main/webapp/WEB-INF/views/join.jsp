@@ -145,7 +145,7 @@
 							</div>
 
 							<div class="d-grid mb-2">
-								<button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
+								<button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" location.href="/oauth2/authorization/google" type="submit">
 									<i class="fab fa-google me-2"></i> Sign up with Google
 								</button>
 							</div>
